@@ -1,5 +1,14 @@
 import os 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "learning_log.settings")
+import django
+django.setup()
+
+#from learning_logs.models import MyModel
+
+from django.contrib.auth.models import User
+
+
+
 
 import django
 django.setup()
@@ -25,3 +34,6 @@ entries = t.entry_set.all()
 
 for entry in entries:
     print(entry)
+
+for user in User.objects.all():
+    print(user.username, user.id)
